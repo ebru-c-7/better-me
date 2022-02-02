@@ -2,6 +2,7 @@ import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
+import { EvilIcons } from "@expo/vector-icons";
 
 import i18n from "../localization";
 
@@ -19,9 +20,10 @@ const BottomTabStack = () => {
           name="HomeStack"
           component={HomeStack}
           options={{
-            tabBarLabel: i18n.t("Home"),
+            // tabBarLabel: i18n.t("Home"),
+            tabBarShowLabel: false,
             tabBarIcon: ({ color, size }) => (
-              <Ionicons name="home" color={color} size={18} />
+              <Ionicons name="home" color={color} size={23} />
             ),
           }}
         />
@@ -29,9 +31,10 @@ const BottomTabStack = () => {
           name="Search"
           component={SearchScreen}
           options={{
-            tabBarLabel: i18n.t("Search"),
+            // tabBarLabel: i18n.t("Search"),
+            tabBarShowLabel: false,
             tabBarIcon: ({ color, size }) => (
-              <Ionicons name="md-glasses-outline" size={28} color={color} />
+              <Ionicons name="md-glasses-outline" size={33} color={color} />
             ),
           }}
         />
@@ -39,13 +42,15 @@ const BottomTabStack = () => {
           name="Overview"
           component={OverviewScreen}
           options={{
-            tabBarLabel: i18n.t("Overview"),
+            // tabBarLabel: i18n.t("Overview"),
+            tabBarShowLabel: false,
             tabBarIcon: ({ color, size }) => (
-              <Ionicons
-                name="ios-stats-chart-outline"
-                size={20}
-                color={color}
-              />
+              // <Ionicons
+              //   name="ios-stats-chart-outline"
+              //   size={25}
+              //   color={color}
+              // />
+              <EvilIcons name="gear" size={28} color={color} />
             ),
           }}
         />

@@ -6,7 +6,6 @@ import i18n from "../localization";
 import HomeScreen from "./../screens/Home";
 import DetailScreen from "./../screens/Detail";
 import NewGoalScreen from "../screens/NewGoal";
-import AddButton from "../components/AddButton";
 
 const HomeStack = ({ navigation: { navigate } }) => {
   const HomeStack = createNativeStackNavigator();
@@ -15,24 +14,27 @@ const HomeStack = ({ navigation: { navigate } }) => {
     <HomeStack.Navigator
       screenOptions={{
         animation: "slide_from_right",
-        headerTitleAlign: "center",
+        // headerTitleAlign: "center",
+        headerShown: false,
       }}
     >
       <HomeStack.Screen
         name="Home"
         component={HomeScreen}
-        options={{
-          title: i18n.t("Home"),
-          headerRight: () => {
-            return (
-              <AddButton
-                onPress={() => {
-                  navigate("NewGoal");
-                }}
-              />
-            );
-          },
-        }}
+        options={
+          {
+            // title: i18n.t("Home"),
+            // headerRight: () => {
+            //   return (
+            //     <AddButton
+            //       onPress={() => {
+            //         navigate("NewGoal");
+            //       }}
+            //     />
+            //   );
+            // },
+          }
+        }
       />
       <HomeStack.Screen
         name="Detail"

@@ -1,7 +1,9 @@
 import React from "react";
-import { View, Text, Button, ScrollView } from "react-native";
+import { ScrollView, StyleSheet, Dimensions } from "react-native";
 
 import GoalList from "../components/Goal/GoalList";
+import CustomHead from "../components/Home/CustomHead";
+import Page from "../components/Page/Page";
 
 import { CATEGORIES, GOALS } from "../util/data";
 
@@ -21,8 +23,18 @@ const Home = (props) => {
   ));
 
   return (
-    <ScrollView style={{ backgroundColor: "#deeefc" }}>{lists}</ScrollView>
+    <Page Component={ScrollView} style={styles.container}>
+      <CustomHead />
+      {lists}
+    </Page>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    paddingTop: 25,
+    paddingLeft: 10,
+  },
+});
 
 export default Home;
