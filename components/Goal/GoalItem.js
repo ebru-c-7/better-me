@@ -1,5 +1,12 @@
 import React from "react";
-import { Image, StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import {
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Dimensions,
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { FontAwesome5 } from "@expo/vector-icons";
 import TextItem from "../Text/TextItem";
@@ -61,16 +68,22 @@ const GoalItem = ({ item }) => {
   );
 };
 
+const wHeight = Dimensions.get("window").height;
+const wWidth = Dimensions.get("window").width;
+
+const padding = 20;
+const imageDim = wWidth / 2.3 - padding;
+
 const styles = StyleSheet.create({
   item: {
-    width: 180,
-    padding: 5,
+    width: imageDim + padding,
+    padding: padding / 2,
     // margin: 5,
   },
   image: {
-    width: 160,
-    height: 200,
-    borderRadius: 10,
+    width: imageDim,
+    height: imageDim,
+    borderRadius: imageDim * 0.5,
     backgroundColor: "#d3cfcfbf",
   },
   newItem: {

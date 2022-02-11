@@ -78,6 +78,7 @@ const Detail = ({ navigation, route }) => {
           <PopupMenu
             onOpen={() => setIsMenuOpen(true)}
             onClose={() => setIsMenuOpen(false)}
+            status={status}
           />
         )}
       </View>
@@ -112,11 +113,11 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
   imageContainer: {
-    width: 160,
-    height: 200,
+    width: wWidth * 0.6,
+    height: wWidth * 0.6,
     elevation: 10,
     backgroundColor: "gray",
-    borderRadius: 10,
+    borderRadius: wWidth * 0.6 * 0.5,
     overflow: "hidden",
   },
   image: {
