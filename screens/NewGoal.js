@@ -1,10 +1,30 @@
 import React from "react";
-import { View, Text } from "react-native";
+import {
+  View,
+  TouchableWithoutFeedback,
+  Keyboard,
+  StyleSheet,
+} from "react-native";
 
-const NewGoal = (props) => (
-  <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-    <Text>New Goal Screen</Text>
-  </View>
-);
+import NewGoalForm from "../components/Goal/NewGoalForm";
+
+const NewGoal = (props) => {
+  return (
+    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+      <View style={styles.screen}>
+        <NewGoalForm />
+      </View>
+    </TouchableWithoutFeedback>
+  );
+};
+
+const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+    padding: 10,
+    alignItems: "center",
+    backgroundColor: "white",
+  },
+});
 
 export default NewGoal;

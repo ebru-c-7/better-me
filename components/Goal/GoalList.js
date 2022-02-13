@@ -39,11 +39,11 @@ const styles = StyleSheet.create({
   listItem: {
     minHeight: 100,
     marginBottom: 30,
-    marginTop: -10
+    marginTop: -10,
   },
   header: {
     fontSize: 25,
-    marginLeft:10,
+    marginLeft: 10,
     marginBottom: 20,
   },
   list: {},

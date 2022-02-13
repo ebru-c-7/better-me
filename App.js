@@ -8,8 +8,10 @@ import {
 } from "@expo-google-fonts/mulish";
 import AppLoading from "expo-app-loading";
 import { StyleSheet } from "react-native";
+import { Provider } from "react-redux";
 
 import BottomTabStack from "./navigation/BottomTabStack";
+import { store } from "./store/store";
 
 export default function App() {
   const [isFontsLoaded] = useFonts({
@@ -23,7 +25,11 @@ export default function App() {
     return <AppLoading />;
   }
 
-  return <BottomTabStack />;
+  return (
+    <Provider store={store}>
+      <BottomTabStack />
+    </Provider>
+  );
 }
 
 const styles = StyleSheet.create({
